@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.MainActivity">
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPersonName|textCapWords" />
+
+    <Button
+        android:id="@+id/botao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Procurar"
+        android:layout_gravity="center"
+        android:layout_below="@+id/edit_text"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:shadowRadius="10"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/botao"/>
+
+    <TextView
+        android:id="@+id/sem_conteudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nada encontrado"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/view"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rec_view"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
