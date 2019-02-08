@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.mViewHolder.mButton = (Button) findViewById(R.id.botao);
         this.mViewHolder.mTextView = (TextView) findViewById(R.id.sem_conteudo);
 
+
+
         // 1 - Definir rec
         this.mViewHolder.mRecyclerView = (RecyclerView) findViewById(R.id.rec_view);
 
@@ -38,9 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-
-        // 2 - Definir Adapter
-
 
     }
 

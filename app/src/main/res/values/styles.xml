@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SelectionColor">
+        <item name="colorControlActivated">#ffff</item>
+        <item name="android:textColorHighlight">#ffff</item>
+
+    </style>
+
 </resources>
