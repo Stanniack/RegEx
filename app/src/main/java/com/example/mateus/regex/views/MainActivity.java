@@ -1,5 +1,7 @@
 package com.example.mateus.regex.views;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +17,7 @@ import com.example.mateus.regex.adapter.TituloAdapter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewHolder mViewHolder = new ViewHolder();
+    private String resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         this.mViewHolder.mEditText = (EditText) findViewById(R.id.edit_text);
+        this.mViewHolder.mTextView2 = (TextView) findViewById(R.id.teste);
         this.mViewHolder.mButton = (Button) findViewById(R.id.botao);
         this.mViewHolder.mTextView = (TextView) findViewById(R.id.sem_conteudo);
 
@@ -35,11 +39,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         this.setListener();
 
+        // Definições do OCR
+        OcrManager manager = new OcrManager();
+
+        // Criar um bitmap a partir de um arquivo drawable
+        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.ocrimagetest);
+
+        // Manda o bitmap para o OCR
+        resultado = manager.startRecognize(bitmap);
+
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        mViewHolder.mTextView2.setVisibility(View.VISIBLE);
+        mViewHolder.mTextView2.setText(resultado);
 
     }
 
@@ -77,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static class ViewHolder {
         TextView mTextView;
+        TextView mTextView2;
         EditText mEditText;
         Button mButton;
         RecyclerView mRecyclerView;
