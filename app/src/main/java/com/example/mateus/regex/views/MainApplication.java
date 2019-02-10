@@ -39,7 +39,7 @@ public class MainApplication extends Application {
             @Override
             public void run() {
                 AssetManager assetManager = MainApplication.instance.getAssets();
-                OutputStream out =null;
+                OutputStream out = null;
                 try {
                     InputStream in = assetManager.open("por.traineddata");
                     String tesspath = instance.tessDataPath();
@@ -47,7 +47,7 @@ public class MainApplication extends Application {
                     if(!tessFolder.exists())
                         tessFolder.mkdir();
                     String tessData = tesspath+"/"+"por.traineddata";
-                    File tessFile = new File(tessData);
+                    File tessFile = new File(tessData);     
                     if(!tessFile.exists())
                     {
                         out = new FileOutputStream(tessData);
@@ -57,16 +57,16 @@ public class MainApplication extends Application {
                             out.write(buffer, 0, read);
                             read = in.read(buffer);
                         }
-                        Log.d("MainApplication", " Did finish copy tess file  ");
+                        Log.d("MainApplication", " Tess file copiado  ");
 
 
                     }
                     else
-                        Log.d("MainApplication", " tess file exist  ");
+                        Log.d("MainApplication", " tess file existe  ");
 
                 } catch (Exception e)
                 {
-                    Log.d("MainApplication", "couldn't copy with the following error : "+e.toString());
+                    Log.d("MainApplication", "Não foi possível copiar : "+e.toString());
                 }finally {
                     try {
                         if(out!=null)
