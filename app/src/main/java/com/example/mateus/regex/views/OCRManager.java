@@ -4,13 +4,14 @@ import android.graphics.Bitmap;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
 
-class OcrManager  {
+class OCRManager {
 
     TessBaseAPI baseAPI = null;
 
     public void initAPI()
     {
         baseAPI = new TessBaseAPI();
+
         // after copy, my path to trainned data is getExternalFilesDir(null)+"/tessdata/"+"vie.traineddata";
         // but init() function just need parent folder path of "tessdata", so it is getExternalFilesDir(null)
         String dataPath = MainApplication.instance.getTessDataParentDirectory();

@@ -47,7 +47,7 @@ public class MainApplication extends Application {
                     if(!tessFolder.exists())
                         tessFolder.mkdir();
                     String tessData = tesspath+"/"+"por.traineddata";
-                    File tessFile = new File(tessData);     
+                    File tessFile = new File(tessData);
                     if(!tessFile.exists())
                     {
                         out = new FileOutputStream(tessData);
@@ -73,7 +73,7 @@ public class MainApplication extends Application {
                             out.close();
                     }catch (Exception exx)
                     {
-
+                        
                     }
                 }
             }
